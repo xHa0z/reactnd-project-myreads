@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Books extends Component {
-  static PropTypes = {
+  static propTypes = {
     title: PropTypes.string.isRequired,
     authors: PropTypes.array.isRequired,
     shelf: PropTypes.string.isRequired,
@@ -34,9 +34,10 @@ class Books extends Component {
         </div>
         <div className="book-title">{title}</div>
         <div className="book-authors">
-          <ul>
-            {authors && authors.map((author, index) => (<li key={index}>{author}</li>))}
-          </ul>
+          {/*<ul>*/}
+            {/*{authors && authors.map((author, index) => (<li key={index}>{author}</li>))}*/}
+          {/*</ul>*/}
+          {authors && authors.join()}
         </div>
       </div>
     )
