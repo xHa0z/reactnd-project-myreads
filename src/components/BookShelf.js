@@ -15,6 +15,7 @@ class BookShelf extends Component {
       <div className="bookshelf">
         <h2 className="bookshelf-title">{title}</h2>
         <div className="bookshelf-books">
+          {console.log(books)}
           <ol className="books-grid">
             {books.map((book) =>
               <Book key={book.id}
@@ -23,7 +24,7 @@ class BookShelf extends Component {
                   imageLinks={book.imageLinks}
                   authors={book.authors}
                   shelf={book.shelf}
-                  onHandleShelfChange={(newShelf) => (this.props.handleShelfChange(book.id, newShelf))}/>)
+                  handleShelfChange={(shelf) => (this.props.handleShelfChange(book.id, shelf))}/>)
               }
           </ol>
         </div>

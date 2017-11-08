@@ -1,7 +1,6 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import Book from "./components/Book";
 import BookList from "./components/BookList"
 
 
@@ -14,17 +13,26 @@ class BooksApp extends React.Component {
     this.retrieveAllBooks();
   }
 
-  retrieveAllBooks() {
+  retrieveAllBooks = () => {
+    console.log(this.state.books);
+    console.log('-----')
     BooksAPI.getAll().then((books) => {
       this.setState({ books });
       console.log(this.state.books)
     })
-  }
+  };
+
+
+
   changeShelf = (id, shelf) => {
-    BooksAPI.update({id},shelf).then(
+    console.log(id)
+    console.log(shelf)
+    BooksAPI.update({id},shelf).then(()=>{
+      console.log('after update')
+      console.log(shelf)
       this.retrieveAllBooks()
-    )
-    console.log(this.state.books)
+
+    })
   };
 
   render() {

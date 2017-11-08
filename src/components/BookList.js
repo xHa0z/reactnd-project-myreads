@@ -13,9 +13,9 @@ class BookList extends Component {
 
   render() {
     const {books, handleShelfChange} = this.props;
-    let currentReadingBooks = books.filter((book) => book.shelf === 'currentlyReading');
-    let wantToReadBooks = books.filter((book) => book.shelf === 'wantToRead');
-    let readBooks = books.filter((book) => book.shelf === 'read');
+    let currentReadingBooks = books.filter((book) => book.shelf === "currentlyReading");
+    let wantToReadBooks = books.filter((book) => book.shelf === "wantToRead");
+    let readBooks = books.filter((book) => book.shelf === "read");
 
     return(
       <div className="list-books">
@@ -24,9 +24,9 @@ class BookList extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <BookShelf title={'Currently Reading'} books={currentReadingBooks} handleShelfChange={(id, shelf) => (handleShelfChange(id, shelf))}/>
-            <BookShelf title={'Want to Read'} books={wantToReadBooks} handleShelfChange={(id, shelf) => (handleShelfChange(id, shelf))}/>
-            <BookShelf title={'Read'} books={readBooks} handleShelfChange={(id, shelf) => (handleShelfChange(id, shelf))}/>
+            <BookShelf title={"Currently Reading"} books={currentReadingBooks} handleShelfChange={(id, shelf) => (handleShelfChange(id, shelf))}/>
+            <BookShelf title={"Want to Read"} books={wantToReadBooks} handleShelfChange={(id, shelf) => (handleShelfChange(id, shelf))}/>
+            <BookShelf title={"Read"} books={readBooks} handleShelfChange={(id, shelf) => (handleShelfChange(id, shelf))}/>
           </div>
         </div>
         <div className="open-search">
