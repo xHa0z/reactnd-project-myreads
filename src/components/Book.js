@@ -6,7 +6,7 @@ class Books extends Component {
     title: PropTypes.string.isRequired,
     authors: PropTypes.array.isRequired,
     shelf: PropTypes.string.isRequired,
-    imageURL: PropTypes.string.isRequired,
+    imageLinks: PropTypes.string.isRequired,
     handleShelfChange: PropTypes.func.isRequired
   };
 
@@ -17,7 +17,7 @@ class Books extends Component {
 
   render() {
     const { title, authors, shelf, imageLinks} = this.props;
-    const imageURL = imageLinks.thumbmail || imageLinks.smallThumbnail
+    const imageURL = imageLinks.thumbnail || imageLinks.smallThumbnail;
     return (
       <div className="book">
         <div className="book-top">
@@ -35,7 +35,7 @@ class Books extends Component {
         <div className="book-title">{title}</div>
         <div className="book-authors">
           <ul>
-            {authors.map((author, index) => (<li key={index}>{author}</li>))}
+            {authors && authors.map((author, index) => (<li key={index}>{author}</li>))}
           </ul>
         </div>
       </div>

@@ -10,12 +10,11 @@ class BookShelf extends Component {
   };
 
   render() {
-    let {title, books} = this.props
+    let {title, books} = this.props;
     return (
       <div className="bookshelf">
         <h2 className="bookshelf-title">{title}</h2>
         <div className="bookshelf-books">
-          {console.log(books)}
           <ol className="books-grid">
             {books.map((book) =>
               <Book key={book.id}
